@@ -17,30 +17,30 @@ const Features = () => {
             {/* icons container */}
             <div className='p-5 md:p-0 flex flex-col md:flex-row gap-6'> 
               
-            <div className='border rounded-lg md:w-[170px] p-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
+            <div className='border rounded-lg md:w-[170px] py-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
             <img src={icon} alt="" /> 
                <h5>Expert Team</h5>
             </div>
-            <div className='border rounded-lg md:w-[170px] p-7 flex flex-col items-center justify-center gap-5 text-lg font-bold bg-[#FF3811] text-white'>
+            <div className='border rounded-lg md:w-[170px] py-7 flex flex-col items-center justify-center gap-5 text-lg font-bold bg-[#FF3811] text-white'>
             <img src={icon2} alt="" /> 
-               <h5>Expert Team</h5>
+               <h5>Timely Delivery</h5>
             </div>
 
-            <div className='border rounded-lg md:w-[170px] p-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
+            <div className='border rounded-lg md:w-[170px] py-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
             <img src={icon3} alt="" /> 
-               <h5>Expert Team</h5>
+               <h5>24/7 Support</h5>
             </div>
-            <div className='border rounded-lg md:w-[170px] p-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
+            <div className='border rounded-lg md:w-[170px] py-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
             <img src={icon4} alt="" /> 
-               <h5>Expert Team</h5>
+               <h5>Best Equipment</h5>
             </div>
-            <div className='border rounded-lg md:w-[170px] p-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
+            <div className='border rounded-lg md:w-[170px] py-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
             <img src={icon5} alt="" /> 
-               <h5>Expert Team</h5>
+               <h5>100% guarantee</h5>
             </div>
-            <div className='border rounded-lg md:w-[170px] p-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
+            <div className='border rounded-lg md:w-[170px] py-7 flex flex-col items-center justify-center gap-5 text-lg font-bold'>
             <img src={icon6} alt="" /> 
-               <h5>Expert Team</h5>
+               <h5>Timely Delivery</h5>
             </div>
 
 
