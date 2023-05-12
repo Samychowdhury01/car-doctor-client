@@ -29,6 +29,7 @@ const About = () => {
           humour, or randomized words which don't look even slightly believable.{" "}
         </p>
         <button className="btn btn-error normal-case">Get More Info</button>
+        
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
-import bannerImg1 from '../../../assets/images/banner/1.jpg'
-import bannerImg2 from '../../../assets/images/banner/2.jpg'
-import bannerImg3 from '../../../assets/images/banner/3.jpg'
-import bannerImg4 from '../../../assets/images/banner/4.jpg'
+import bannerImg1 from '../../../assets/images/homeCarousel/1.jpg'
+import bannerImg2 from '../../../assets/images/homeCarousel/2.jpg'
+import bannerImg3 from '../../../assets/images/homeCarousel/3.jpg'
+import bannerImg4 from '../../../assets/images/homeCarousel/4.jpg'
 
 
 
