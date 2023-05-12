@@ -1,21 +1,46 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
 import loginImg from "../../assets/images/login/login.svg";
 import { FcGoogle } from "react-icons/fc";
 import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
+  const { signInWithGoogle, signInUser } = useContext(AuthContext);
+  const [errorMessage, setErrorMessage] = useState("");
 
-const handleLogin = event =>{
-  event.preventDefault()
-  const form = event.target
-  const email = form.email.value
-  const password = form.password.value
-  console.log(email, password)
-}
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    setErrorMessage('')
 
+    signInUser(email, password)
+      .then((result) => {
+        const loggedUser = result.signInUser;
+        toast.success("Login successful");
+        event.target.reset();
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setErrorMessage(error?.message);
+      });
+  };
 
-
-
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+    .then(result =>{
+      const loggedUser = result?.user
+      toast.success('Login Successful.')
+    })
+    .catch(error =>{
+      toast.error('something is wrong, try Again !!')
+    })
+  };
 
 
 
@@ -37,6 +62,7 @@ const handleLogin = event =>{
                 name="email"
                 placeholder="email"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -48,8 +74,14 @@ const handleLogin = event =>{
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
+                required
               />
             </div>
+            <label className="text-center ">
+              <p className="label-text-alt text-[#FF3811] font-bold link link-hover">
+                {errorMessage}
+              </p>
+            </label>
             <div className="form-control mt-6">
               <input
                 className="btn btn-error bg-[#FF3811] text-white normal-case"
@@ -66,19 +98,22 @@ const handleLogin = event =>{
                 <div className="w-14 h-14 rounded-full bg-base-200 flex items-center justify-center cursor-pointer">
                   <FaLinkedinIn className="text-xl text-[#0A66C2]" />
                 </div>
-                <div className="w-14 h-14 rounded-full bg-base-200 flex items-center justify-center cursor-pointer">
+                <div 
+                onClick={handleGoogleSignIn}
+                className="w-14 h-14 rounded-full bg-base-200 flex items-center justify-center cursor-pointer"
+                >
                   <FcGoogle className="text-xl" />
                 </div>
               </div>
             </div>
             <label className="text-center text-gray-500">
               <p>
-                <span>Forgot password?</span>
+                <span>Didn't Have an Account?</span>
                 <Link
                   to="/register"
                   className="link link-hover ml-1 text-[#FF3811] font-semibold"
                 >
-                  Sign In
+                  Sign Up
                 </Link>
               </p>
             </label>

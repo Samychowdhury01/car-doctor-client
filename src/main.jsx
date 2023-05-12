@@ -1,17 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import {
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/Routes.jsx";
+import AuthProvider from "./Providers/AuthProvider";
+import { Toaster } from "react-hot-toast";
 
-  RouterProvider,
-} from "react-router-dom";
-import router from './routes/Routes.jsx';
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='max-w-7xl mx-auto'>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <div className="max-w-7xl mx-auto">
     <React.StrictMode>
-     <RouterProvider router={router} />
-  </React.StrictMode>
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <Toaster />
+      </AuthProvider>
+    </React.StrictMode>
   </div>
-)
+);

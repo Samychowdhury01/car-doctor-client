@@ -12,7 +12,18 @@ const Register = () => {
           </div>
           <div className="w-full border-2 rounded-lg shadow-2xl bg-base-100">
             <form  className="card-body md:p-16">
-              <h1 className="text-4xl font-semibold text-center mb-12">Login</h1>
+              <h1 className="text-4xl font-semibold text-center mb-12">Sign Up</h1>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-bold">Email</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  className="input input-bordered"
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold">Email</span>
@@ -20,7 +31,7 @@ const Register = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="email"
+                  placeholder="Your email"
                   className="input input-bordered"
                 />
               </div>
@@ -31,7 +42,7 @@ const Register = () => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="password"
+                  placeholder="Your password"
                   className="input input-bordered"
                 />
               </div>
@@ -39,7 +50,7 @@ const Register = () => {
                 <input
                   className="btn btn-error bg-[#FF3811] text-white normal-case"
                   type="submit"
-                  value="Sign In"
+                  value="Sign Up"
                 />
               </div>
               <div className="mt-7 mb-12 text-center">
@@ -58,12 +69,12 @@ const Register = () => {
               </div>
               <label className="text-center text-gray-500">
                 <p>
-                  <span>Forgot password?</span>
+                  <span>Already have an account?</span>
                   <Link
-                    to="/register"
+                    to="/login"
                     className="link link-hover ml-1 text-[#FF3811] font-semibold"
                   >
-                    Sign In
+                    Login
                   </Link>
                 </p>
               </label>
