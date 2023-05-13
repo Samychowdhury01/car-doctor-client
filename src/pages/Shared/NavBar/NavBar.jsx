@@ -1,9 +1,13 @@
 import ActiveLink from "./ActiveLink";
 import { HiOutlineShoppingBag, HiOutlineSearch } from "react-icons/hi";
-import logo from '../../../assets/logo.svg'
+import logo from "../../../assets/logo.svg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const NavBar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user)
   return (
     <div className="navbar bg-base-100 h-28">
       <div className="navbar-start">
@@ -43,11 +47,18 @@ const NavBar = () => {
             <li>
               <ActiveLink to="/contact">Contact</ActiveLink>
             </li>
+            <li>
+              {user?.email ? (
+                <ActiveLink to="/login">Logout</ActiveLink>
+              ) : (
+                <ActiveLink to="/login">Login</ActiveLink>
+              )}
+            </li>
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost normal-case text-xl">
-            <img src={logo} alt="nav-logo" />
-            </Link>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
+          <img src={logo} alt="nav-logo" />
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -66,14 +77,21 @@ const NavBar = () => {
           <li>
             <ActiveLink to="/contact">Contact</ActiveLink>
           </li>
+          <li>
+              {user?.email ? (
+                <ActiveLink to="/login">Logout</ActiveLink>
+              ) : (
+                <ActiveLink to="/login">Login</ActiveLink>
+              )}
+            </li>
         </ul>
       </div>
       <div className="navbar-end">
-       <div className="md:flex items-center gap-5">
-        <HiOutlineShoppingBag className="text-2xl"/>
-        <HiOutlineSearch className="text-2xl"/>
-        <button className="btn btn-outline btn-error">Appointment</button>
-       </div>
+        <div className="md:flex items-center gap-5">
+          <HiOutlineShoppingBag className="text-2xl" />
+          <HiOutlineSearch className="text-2xl" />
+          <button className="btn btn-outline btn-error">Appointment</button>
+        </div>
       </div>
     </div>
   );
