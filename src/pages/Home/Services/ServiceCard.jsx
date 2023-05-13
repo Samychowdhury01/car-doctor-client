@@ -19,7 +19,7 @@ const ServiceCard = ({service}) => {
         <div className="card-actions">
           <div className=" w-full flex justify-between items-center text-xl text-[#FF3811] font-semibold">
             <p className="">Price: ${price}</p>
-            <Link to={`/checkout/${_id}`}>
+            <Link to={`/booking/${_id}`}>
             <FaArrowRight/>
             </Link>
           </div>
