@@ -79,7 +79,10 @@ const NavBar = () => {
           </li>
           <li>
               {user?.email ? (
+                <>
                 <ActiveLink to="/login">Logout</ActiveLink>
+                <ActiveLink to="/bookings">My Bookings</ActiveLink>
+                </>
               ) : (
                 <ActiveLink to="/login">Login</ActiveLink>
               )}
